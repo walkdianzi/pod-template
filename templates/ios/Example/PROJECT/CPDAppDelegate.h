@@ -7,9 +7,12 @@
 //
 
 @import UIKit;
+#import "CPDRootViewController.h"
 
 @interface CPDAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) CPDRootViewController *rooViewController;
+@property (strong, nonatomic) UINavigationController *navgationController;
 
 @end

@@ -12,7 +12,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    self.rooViewController = [[CPDRootViewController alloc] init];
+    self.navgationController = [[UINavigationController alloc]initWithRootViewController:self.rooViewController];
+    self.window.rootViewController = self.navgationController;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
