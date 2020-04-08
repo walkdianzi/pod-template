@@ -30,7 +30,7 @@
                     [[CPDFunctionTarget alloc] initWithTitle:@"测试3" target:reveive selector:@selector(actionTwo)]
                   ],
         @"section2":@[
-                        [[CPDFunctionTarget alloc] initWithTitle:@"跳转Controller" viewController:[CPDViewController new]]
+                        [[CPDFunctionTarget alloc] initWithTitle:@"跳转Controller" viewController:[CPDViewController class]]
                     ]
     };
     
@@ -71,8 +71,8 @@
     CPDFunctionTarget *functionTarget = [_items objectForKey:[_items allKeys][indexPath.section]][indexPath.row];
     if (functionTarget.target && [functionTarget.target respondsToSelector:functionTarget.selector]) {
         [functionTarget.target performSelector:functionTarget.selector withObject:nil];
-    }else if (functionTarget.viewController){
-        [self.navigationController pushViewController:functionTarget.viewController animated:YES];
+    }else if (functionTarget.VCClass){
+        [self.navigationController pushViewController:[functionTarget.VCClass new] animated:YES];
     }
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

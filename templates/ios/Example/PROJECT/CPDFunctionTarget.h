@@ -15,10 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, copy)  NSString         *title;
 @property(nonatomic, strong)id               target;
 @property(nonatomic, assign)SEL              selector;
-@property(nonatomic, strong)UIViewController *viewController;
+@property(nonatomic, assign)Class            VCClass;
 
 - (instancetype)initWithTitle:(NSString *)title target:(id)target selector:(SEL)selector;
-- (instancetype)initWithTitle:(NSString *)title viewController:(UIViewController *)viewController;
+- (instancetype)initWithTitle:(NSString *)title viewController:(Class)VCClass;
 
 @end
 

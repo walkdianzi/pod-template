@@ -10,11 +10,11 @@
 
 @implementation CPDFunctionTarget
 
-- (instancetype)initWithTitle:(NSString *)title viewController:(UIViewController *)viewController{
+- (instancetype)initWithTitle:(NSString *)title viewController:(Class)VCClass{
     
     if (self = [super init]) {
         _title = title;
-        _viewController = viewController;
+        _VCClass = VCClass;
     }
     return self;
 }
